@@ -1,0 +1,2 @@
+Quando se tem uma aplicação onde ela utiliza serviços de terceiros e geralmente fazemos uso na camada de controller junto com a regras de negócio com o tempo a aplicação crescendo é muito provável que iremos acrescentar mais linhas de códigos de serviços externos.
+Abordagem de utilizar um serviço de terceiro de forma imperativo não é a melhor opção para esse caso, por isso é bom trabalhar com eventos sendo emitidos para cada subscriber depois que uma ação for executada na camada da service.

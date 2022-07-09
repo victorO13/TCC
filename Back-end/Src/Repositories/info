@@ -1,0 +1,3 @@
+e uma camada de acesso e interação com as entidades do banco de dados
+
+Exemplo userRepository > contendo todas as querys de create delete ou consulta ao banco de dados
