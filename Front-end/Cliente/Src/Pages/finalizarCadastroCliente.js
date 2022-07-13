@@ -118,7 +118,7 @@ export default function InicialScreen({ route, navigation }) {
           containerStyle={styleCadastro.dropdown_Container}
           itemStyle={styleCadastro.dropdown_item}
           dropDownStyle={styleCadastro.dropdown_style}
-          onChangeItem={item => setValorSexo(item.value)}
+          onChangeItem={item => setValueSexo(item.value)}
           zIndex={2}
         />
 
@@ -137,7 +137,7 @@ export default function InicialScreen({ route, navigation }) {
           containerStyle={styleCadastro.dropdown_Container}
           itemStyle={styleCadastro.dropdown_item}
           dropDownStyle={styleCadastro.dropdown_style}
-          onChangeItem={item => setValorSexo(item.value)}
+          onChangeItem={item => setValueRegiao(item.value)}
           zIndex={1}
         />
 
@@ -148,7 +148,7 @@ export default function InicialScreen({ route, navigation }) {
       <View zIndex={-1}>
         <TouchableOpacity
           style={styleCadastro.Btn}
-          onPress={() => navigation.navigate('loginCliente')}
+          onPress={() => navigation.navigate('main')}
         >
           <Text style={styleGlobal.button}>FINALIZAR</Text>
         </TouchableOpacity>

@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 //PAGES
 import LoginClientePage from './Src/Pages/loginCliente'
 import FinalizarCadastroCliente from './Src/Pages/finalizarCadastroCliente'
+import MainPage from './Src/Pages/main'
 
 //NAVIGATIONS
 const Stack = createNativeStackNavigator();
@@ -16,6 +17,7 @@ export default function App() {
       <Stack.Navigator initialRouteName="loginCliente" screenOptions={{ headerShown: false }}>
         <Stack.Screen name='loginCliente' component={LoginClientePage} />
         <Stack.Screen name='finalizarCadastroCliente' component={FinalizarCadastroCliente} />
+        <Stack.Screen name="main" component={MainPage} />
       </Stack.Navigator>
     </NavigationContainer >
   );
