@@ -10,7 +10,7 @@ import { FontAwesome } from '@expo/vector-icons'
 const Tab = createBottomTabNavigator()
 
 //PAGES
-import teste from './finalizarCadastroCliente'
+import restaurante from './restaurante'
 import perfilPage from './perfil'
 import t from './loginCliente'
 
@@ -54,7 +54,7 @@ export default function MainScreen({ route, navigation }) {
       }
     >
       <Tab.Screen name="reserva" options={{ title: false, headerShown: false }} component={t} initialParams={route.params} />
-      <Tab.Screen name="restaurante" options={{ title: false, headerShown: false }} component={teste} initialParams={route.params} />
+      <Tab.Screen name="restaurante" options={{ title: false, headerShown: false }} component={restaurante} initialParams={route.params} />
       <Tab.Screen name="perfil" options={{ title: false, headerShown: false }} component={perfilPage} initialParams={route.params} />
     </Tab.Navigator >
   )
