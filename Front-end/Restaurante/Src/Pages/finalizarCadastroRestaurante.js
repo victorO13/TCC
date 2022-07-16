@@ -59,11 +59,11 @@ export default function InicialScreen({ route, navigation }) {
     { label: 'DF', value: 'DF' }
   ]);
   function prosseguir() {
-    let restaurante = new RestauranteModel(nomeCompleto,
-      email, cnpj, telefone, fantasia,
-      valorRegiao)
+    //let restaurante = new RestauranteModel(nomeCompleto,
+    //email, cnpj, telefone, fantasia,
+    //valueRegiao)
 
-    navigation.navigate('finalizarCadastroDescricao', restaurante)
+    navigation.navigate('finalizarCadastroDescricao', /*restaurante*/)
 
   }
 
