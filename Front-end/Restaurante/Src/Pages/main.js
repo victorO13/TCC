@@ -13,7 +13,7 @@ const Tab = createBottomTabNavigator()
 import pratosPage from './finalizarCadastroRestaurante'
 import reservaPage from './loginRestaurante'
 import perfilPage from './perfil'
-import mesasPage from './finalizarCadastroDescricao'
+import mesasPage from './cadastrarPratos'
 
 
 //STYLES - COLORS

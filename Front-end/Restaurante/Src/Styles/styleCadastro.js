@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
     {
         color: colors.primary,
         fontSize: 16,
+        paddingTop: 10,
         paddingLeft: 10
     },
     icon
