@@ -10,6 +10,7 @@ import finalizarCadastroDescricao from './Src/Pages/finalizarCadastroDescricao'
 import main from './Src/Pages/main'
 import cadastrarPratos from './Src/Pages/cadastrarPratos'
 import cadastrarMesas from './Src/Pages/cadastrarMesas'
+import editPerfil from './Src/Pages/editPerfil'
 
 
 //NAVIGATIONS
@@ -25,6 +26,8 @@ export default function App() {
         <Stack.Screen name='finalizarCadastroDescricao' component={finalizarCadastroDescricao} />
         <Stack.Screen name='cadastrarPratos' component={cadastrarPratos} />
         <Stack.Screen name='cadastrarMesas' component={cadastrarMesas} />
+        <Stack.Screen name='editPerfil' component={editPerfil} />
+
 
       </Stack.Navigator>
     </NavigationContainer >
