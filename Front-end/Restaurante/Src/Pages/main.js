@@ -10,10 +10,10 @@ import { MaterialIcons } from '@expo/vector-icons'
 const Tab = createBottomTabNavigator()
 
 //PAGES
-import pratosPage from './finalizarCadastroRestaurante'
+import pratosPage from './cadastrarPratos'
 import reservaPage from './cadastrarMesas'
 import perfilPage from './perfil'
-import mesasPage from './cadastrarPratos'
+import mesasPage from './cadastrarMesas'
 
 
 //STYLES - COLORS
