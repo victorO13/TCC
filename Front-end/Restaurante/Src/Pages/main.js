@@ -11,7 +11,7 @@ const Tab = createBottomTabNavigator()
 
 //PAGES
 import pratosPage from './finalizarCadastroRestaurante'
-import reservaPage from './loginRestaurante'
+import reservaPage from './cadastrarMesas'
 import perfilPage from './perfil'
 import mesasPage from './cadastrarPratos'
 
