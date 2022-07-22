@@ -12,25 +12,23 @@ import styleCadastro from '../Styles/styleCadastro'
 import Textarea from 'react-native-textarea'
 
 //SERVICE
-//import restauranteService from '../services/restauranteService'
+import restauranteService from '../Services/restauranteService'
 
 export default function InicialScreen({ route, navigation }) {
 
     const [descricao, setDescricao] = useState('')
 
     function finalizar() {
-        //route.params.restaurante_descricao = descricao
+        route.params.restaurante_descricao = descricao
 
-        /*let restaurante = route.params
+        let restaurante = route.params
         restauranteService.create(route)
-            .then(result => {
-
-                restaurante.restaurante_codigo = result.data.restaurante_codigo
+            .then((response) => {
+                restaurante.restaurante_codigo = response.data.restaurante_codigo
                 navigation.navigate('main', restaurante)
 
-            })*/
+            })
 
-        navigation.navigate('main', /*restaurante*/)
     }
     return (
         <View style={[styleGlobal.container]}>

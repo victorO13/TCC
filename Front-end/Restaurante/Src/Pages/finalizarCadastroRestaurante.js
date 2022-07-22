@@ -15,7 +15,7 @@ import styleGlobal from '../Styles/styleGlobal'
 import styleCadastro from '../Styles/styleCadastro'
 import DropDownPicker from 'react-native-dropdown-picker'
 //MODEL
-//import RestauranteModel from '../model/restauranteModel'
+import RestauranteModel from '../Model/restauranteModel'
 
 export default function InicialScreen({ route, navigation }) {
 
@@ -59,11 +59,11 @@ export default function InicialScreen({ route, navigation }) {
     { label: 'DF', value: 'DF' }
   ]);
   function prosseguir() {
-    //let restaurante = new RestauranteModel(nomeCompleto,
-    //email, cnpj, telefone, fantasia,
-    //valueRegiao)
+    let restaurante = new RestauranteModel(nomeCompleto,
+      email, cnpj, telefone, fantasia,
+      valueRegiao)
 
-    navigation.navigate('finalizarCadastroDescricao', /*restaurante*/)
+    navigation.navigate('finalizarCadastroDescricao', restaurante)
 
   }
 
