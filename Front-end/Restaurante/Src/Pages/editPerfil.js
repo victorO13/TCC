@@ -16,18 +16,18 @@ import styleEditPerfil from '../Styles/styleEditPerfil'
 import styleCadastro from '../Styles/styleCadastro'
 
 //MODEL
-//import restauranteModel from '../model/restauranteModel'
+import restauranteModel from '../Model/restauranteModel'
 //SERVICE
-//import restauranteService from '../services/restauranteService'
+import restauranteService from '../Services/restauranteService'
 
 export default function InicialScreen({ route, navigation }) {
-
-  const [nome, setNome] = useState('route.params.restaurante_nome')
-  const [fantasia, setFantasia] = useState('route.params.restaurante_fantasia')
-  const [email, setEmail] = useState('route.params.restaurante_email')
-  const [cnpj, setCnpj] = useState('route.params.restaurante_cnpj')
-  const [telefone, setTelefone] = useState('route.params.restaurante_telefone')
-  const [descricao, setDescricao] = useState('route.params.restaurante_descricao')
+  console.log('perfil', route);
+  const [nome, setNome] = useState(route.params.restaurante_nome)
+  const [fantasia, setFantasia] = useState(route.params.restaurante_fantasia)
+  const [email, setEmail] = useState(route.params.restaurante_email)
+  const [cnpj, setCnpj] = useState(route.params.restaurante_cnpj)
+  const [telefone, setTelefone] = useState(route.params.restaurante_telefone)
+  const [descricao, setDescricao] = useState(route.params.restaurante_descricao)
   // DropDownPicker REGIÂO
   const [openRegiao, setOpenRegiao] = useState(false);
   const [valueRegiao, setValueRegiao] = useState('selecione');
@@ -62,12 +62,12 @@ export default function InicialScreen({ route, navigation }) {
     { label: 'DF', value: 'DF' }
   ]);
   function atualizar() {
-    // const restaurante = new restauranteModel(
-    //   nome, email, cnpj,
-    //   telefone, fantasia, regiao,
-    //   descricao, route.params.restaurante_codigo)
-    // restauranteService.update(restaurante)
-    navigation.navigate('perfil', /*restaurante*/)
+    const restaurante = new restauranteModel(
+      nome, email, cnpj,
+      telefone, fantasia, valueRegiao,
+      descricao, route.params.restaurante_codigo)
+    restauranteService.update(restaurante)
+    navigation.navigate('perfil', restaurante)
 
   }
 
