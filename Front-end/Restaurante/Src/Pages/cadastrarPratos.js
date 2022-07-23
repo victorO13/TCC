@@ -18,19 +18,21 @@ import styleCadastro from '../Styles/styleCadastro'
 import PageName from '../Components/PageName'
 
 //MODEL
-//import pratoModel from '../Model/pratoModel'
+import pratoModel from '../Model/pratoModel'
 
 //SERVICE
-//import pratoService from '../Services/pratoService'
+import pratoService from '../Services/pratoService'
 
 export default function InicialScreen({ route, navigation }) {
+
+
 
   const [nome, setNome] = useState('')
   const [quant, setQuant] = useState('')
   const [preco, setPreco] = useState('')
   const [descricao, setDescricao] = useState('')
-  const [codigo, setCodigo] = useState('route.params.resturante_codigo')
-  const [email, setEmail] = useState('route.params.restaurante_email')
+  const [codigo, setCodigo] = useState(route.params.restaurante_codigo)
+  const [email, setEmail] = useState(route.params.restaurante_email)
   // DropDownPicker REGIÂO
   const [openCategoria, setOpenCategoria] = useState(false);
   const [valueCategoria, setValueCategoria] = useState('selecione');
@@ -44,19 +46,20 @@ export default function InicialScreen({ route, navigation }) {
     ]);
 
   function cadastrar() {
-    // let pratos = new pratoModel(nome, categoria, quant, preco,
-    //   descricao, codigo, email)
-    // pratoService.create(pratos)
-    Alert.alert(
-      "Sucesso!",
-      "Prato adicionado com sucesso!",
-      [
-        { text: "OK", onPress: () => navigation.navigate('main') }
-      ],
-      { cancelable: false }
-    )
+    let pratos = new pratoModel(nome, categoria, quant, preco,
+      descricao, codigo, email)
+    pratoService.create(pratos)
+      .then((response) => {
+        Alert.alert(
+          "Sucesso!",
+          "Prato adicionado com sucesso!",
+          [
+            { text: "OK", onPress: () => navigation.navigate('main') }
+          ],
+          { cancelable: false }
+        )
 
-
+      })
   }
   return (
     <View style={styleGlobal.container}>

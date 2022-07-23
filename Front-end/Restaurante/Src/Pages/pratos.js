@@ -10,18 +10,18 @@ import {
 
 //STYLES
 import styleGlobal from '../Styles/styleGlobal'
+import stylePratos from '../Styles/stylePratos'
 import colors from '../Styles/Colors/Colors'
 
 
 //SERVICE
-//import pratoService from '../services/pratoService'
+import pratoService from '../Services/pratoService'
 
 //COMPONENTES
 import ItemListPratos from '../Components/ItemListPratos'
 import PageName from '../Components/PageName'
 
 export default function PratosScreen({ route, navigation }) {
-
 
   const [listaPratos, setListaPratos] = useState([])
   const [listaPratosUpdate, setListaPratosUpdate] = useState(true)
@@ -77,7 +77,7 @@ export default function PratosScreen({ route, navigation }) {
   }, [listaPratosUpdate])
 
   return (
-    <View style={styleGlobal.view}>
+    <View style={stylePratos.container}>
 
       <PageName
         name='CARDÁPIO'
@@ -86,7 +86,7 @@ export default function PratosScreen({ route, navigation }) {
       <FlatList
         style={styleGlobal.list}
         data={listaPratos}
-        keyExtractor={item => item}
+        keyExtractor={item => item.prato_codigo.toString()}
         showsVerticalScrollIndicator={false}
         refreshControl={
           <RefreshControl
@@ -97,11 +97,11 @@ export default function PratosScreen({ route, navigation }) {
         }
         renderItem={({ item }) =>
           <ItemListPratos
-            nome={'item.prato_nome'}
-            descricao={'item.prato_descricao'}
-            categoria={'item.prato_categoria'}
-            quantidade={'item.prato_quantidade'}
-            preco={'item.prato_preco'}
+            nome={item.prato_nome}
+            descricao={item.prato_descricao}
+            categoria={item.prato_categoria}
+            quantidade={item.prato_quantidade}
+            preco={item.prato_preco}
             funcEdit={() => navigation.navigate('editPratos', item)}
             funcRemove={() => removePrato(item)}
           >

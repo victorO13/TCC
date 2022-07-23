@@ -20,7 +20,7 @@ function PageName(props) {
                 style={[style.icon]}
                 source={require('../../assets/icon2.png')}
             />
-            <Text style={[style.text]}>{props.name}</Text>
+            <Text style={[style.text]}>   {props.name}</Text>
 
 
 
