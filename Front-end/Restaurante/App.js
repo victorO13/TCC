@@ -12,6 +12,7 @@ import cadastrarPratos from './Src/Pages/cadastrarPratos'
 import cadastrarMesas from './Src/Pages/cadastrarMesas'
 import editPerfil from './Src/Pages/editPerfil'
 import editMesas from './Src/Pages/editMesas'
+import editPratos from './Src/Pages/editPratos'
 
 
 //NAVIGATIONS
@@ -29,6 +30,7 @@ export default function App() {
         <Stack.Screen name='cadastrarMesas' component={cadastrarMesas} />
         <Stack.Screen name='editPerfil' component={editPerfil} />
         <Stack.Screen name='editMesas' component={editMesas} />
+        <Stack.Screen name='editPratos' component={editPratos} />
 
       </Stack.Navigator>
     </NavigationContainer >

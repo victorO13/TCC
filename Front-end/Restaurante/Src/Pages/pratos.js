@@ -22,14 +22,13 @@ import ItemListPratos from '../Components/ItemListPratos'
 import PageName from '../Components/PageName'
 
 export default function PratosScreen({ route, navigation }) {
-
   const [listaPratos, setListaPratos] = useState([])
   const [listaPratosUpdate, setListaPratosUpdate] = useState(true)
 
   async function loadDados() {
     console.log(route.params.restaurante_codigo)
     if (listaPratosUpdate) {
-      await pratoService.findByRestaurante(route.params.restaurante_codigo)
+      await pratoService.findByRestaurante(!route.params.restaurante_codigo ? route.params.prato_restaurante_codigo : route.params.restaurante_codigo)
         .then((p) => {
           setListaPratos(p.pratos)
         })

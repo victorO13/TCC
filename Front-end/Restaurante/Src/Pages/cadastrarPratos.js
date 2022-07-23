@@ -31,7 +31,7 @@ export default function InicialScreen({ route, navigation }) {
   const [quant, setQuant] = useState('')
   const [preco, setPreco] = useState('')
   const [descricao, setDescricao] = useState('')
-  const [codigo, setCodigo] = useState(route.params.restaurante_codigo)
+  const [codigo, setCodigo] = useState(!route.params.restaurante_codigo ? route.params.prato_restaurante_codigo : route.params.restaurante_codigo)
   const [email, setEmail] = useState(route.params.restaurante_email)
   // DropDownPicker REGIÂO
   const [openCategoria, setOpenCategoria] = useState(false);
