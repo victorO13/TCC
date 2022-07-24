@@ -18,7 +18,7 @@ import ItemListRestaurante from '../Components/ItemListRestaurante'
 import PageName from '../Components/PageName'
 
 //SERVICES
-//import restauranteService from '../Services/restauranteService'
+import restauranteService from '../Services/restauranteService'
 
 export default function RestauranteScreen({ route, navigation }) {
 
