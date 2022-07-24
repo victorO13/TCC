@@ -16,12 +16,16 @@ import styleGlobal from '../Styles/styleGlobal'
 import styleCadastro from '../Styles/styleCadastro'
 //COMPONENTS
 import DropDownPicker from 'react-native-dropdown-picker'
+//MODEL
+import ClienteModel from '../Model/clienteModel'
+//SERVICE
+import clienteService from '../Services/clienteService'
 
 
 export default function InicialScreen({ route, navigation }) {
   //const user = route.params.user
   const [nomeCompleto, setNomeCompleto] = useState('')
-  const [email, setEmail] = useState('')
+  const [email, setEmail] = useState('teste@teste.com')
   const [cpf, setCpf] = useState('')
   const [telefone, setTelefone] = useState('')
 
@@ -68,6 +72,20 @@ export default function InicialScreen({ route, navigation }) {
     { label: 'TO', value: 'TO' },
     { label: 'DF', value: 'DF' }
   ]);
+  async function finalizar() {
+    let cliente = new ClienteModel(nomeCompleto,
+      email, cpf, telefone, valueSexo,
+      valueRegiao)
+
+    await clienteService.create(cliente)
+      .then(result => {
+        // console.log(result)
+        cliente.cliente_codigo = result.data.cliente_codigo
+      })
+    //console.log(cliente)
+    navigation.navigate('main', cliente)
+
+  }
 
 
   return (
@@ -148,7 +166,7 @@ export default function InicialScreen({ route, navigation }) {
       <View zIndex={-1}>
         <TouchableOpacity
           style={styleCadastro.Btn}
-          onPress={() => navigation.navigate('main')}
+          onPress={() => finalizar()}
         >
           <Text style={styleGlobal.button}>FINALIZAR</Text>
         </TouchableOpacity>
