@@ -22,10 +22,10 @@ import { FontAwesome } from '@expo/vector-icons'
 //COMPONENTS
 import PageName from '../Components/PageName'
 //MODEL
-//import MesaModel from '../model/MesaModel'
+import MesaModel from '../Model/MesaModel'
 
 //SERVICE
-//import mesaService from '../services/mesaService'
+import mesaService from '../Services/mesaService'
 
 //UTIL
 import dateFormat from '../Util/dateFormat'
@@ -35,14 +35,14 @@ export default function InicialScreen({ route, navigation }) {
   const [hora, setHora] = useState('')
   const [qtdMesa, setQtdMesa] = useState(0)
   const [qtdPessoa, setQtdPessoa] = useState(0)
-  const [codigo, setCodigo] = useState('route.params.resturante_codigo')
-  const [email, setEmail] = useState('route.params.restaurante_email')
-
+  const [codigo, setCodigo] = useState(route.params.restaurante_codigo)
+  const [email, setEmail] = useState(route.params.restaurante_email)
   function cadastrar() {
-    // let dataFormatada = dateFormat.formatDateToStringNoBr(data)
-    // let mesas = new MesaModel(dataFormatada, hora,
-    //   qtdMesa, qtdPessoa, codigo, email)
-    // mesaService.create(mesas)
+    let dataFormatada = dateFormat.formatDateToStringNoBr(data)
+    let mesas = new MesaModel(dataFormatada, hora,
+      qtdPessoa, qtdMesa, codigo, email)
+
+    mesaService.create(mesas)
     Alert.alert(
       "Sucesso!",
       "Mesa adicionada com sucesso!",

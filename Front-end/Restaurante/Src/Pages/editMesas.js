@@ -22,28 +22,28 @@ import { FontAwesome } from '@expo/vector-icons'
 //UTIL
 import dateFormat from '../Util/dateFormat'
 //MODEL
-//import mesaModel from '../model/MesaModel'
+import mesaModel from '../Model/MesaModel'
 //SERVICE
-//import mesaService from '../services/mesaService'
+import mesaService from '../Services/mesaService'
 
 export default function InicialScreen({ route, navigation }) {
 
-  const [data, setData] = useState(dateFormat.formatDate('route.params.mesa_data_hora'))
-  const [hora, setHora] = useState(dateFormat.getHoraMin('route.params.mesa_data_hora'))
-  const [qtdMesa, setQtdMesa] = useState('route.params.mesa_quant_mesas')
-  const [qtdPessoa, setQtdPessoa] = useState('route.params.mesa_quant_pessoas')
-  const [codigo, setCodigo] = useState('route.params.mesa_restaurante_codigo')
+  const [data, setData] = useState(dateFormat.formatDate(route.params.mesa_data_hora))
+  const [hora, setHora] = useState(dateFormat.getHoraMin(route.params.mesa_data_hora))
+  const [qtdMesa, setQtdMesa] = useState(route.params.mesa_quant_mesas)
+  const [qtdPessoa, setQtdPessoa] = useState(route.params.mesa_quant_pessoas)
+  const [codigo, setCodigo] = useState(route.params.mesa_restaurante_codigo)
 
   function update() {
     let dataFormatada = dateFormat.formatDateToStringNoBr(data)
     let mesas = new mesaModel(dataFormatada, hora,
-      qtdMesa, qtdPessoa, codigo, '', route.params.mesa_codigo)
+      qtdPessoa, qtdMesa, codigo, '', route.params.mesa_codigo)
+    console.log('update', mesas);
     mesaService.update(mesas)
     navigation.navigate('main', mesas)
   }
 
   return (
-
 
     <View style={[styleGlobal.container, styleCadastrarMesa.container]}>
       <PageName name='EDITAR MESAS' />
