@@ -19,12 +19,12 @@ import PageName from '../Components/PageName'
 export default function InicialScreen({ route, navigation }) {
 
   const [cliente, setCliente] = useState(route.params)
-  const [cpf, setCpf] = useState('cliente.cliente_cpf')
-  const [email, setEmail] = useState('cliente.cliente_email')
-  const [nome, setNome] = useState('cliente.cliente_nome')
-  const [sexo, setSexo] = useState('cliente.cliente_sexo')
-  const [telefone, setTelefone] = useState('cliente.cliente_telefone')
-  const [regiao, setRegiao] = useState('cliente.cliente_regiao')
+  const [cpf, setCpf] = useState(cliente.cliente_cpf)
+  const [email, setEmail] = useState(cliente.cliente_email)
+  const [nome, setNome] = useState(cliente.cliente_nome)
+  const [sexo, setSexo] = useState(cliente.cliente_sexo)
+  const [telefone, setTelefone] = useState(cliente.cliente_telefone)
+  const [regiao, setRegiao] = useState(cliente.cliente_regiao)
 
 
   useEffect(() => {
@@ -32,12 +32,12 @@ export default function InicialScreen({ route, navigation }) {
   }, [route.params])
 
   useEffect(() => {
-    setCpf("cliente.cliente_cpf")
-    setNome('cliente.cliente_nome')
-    setEmail('cliente.cliente_email')
-    setTelefone('cliente.cliente_telefone')
-    setRegiao('cliente.cliente_regiao')
-    setSexo('cliente.cliente_sexo')
+    setCpf(cliente.cliente_cpf)
+    setNome(cliente.cliente_nome)
+    setEmail(cliente.cliente_email)
+    setTelefone(cliente.cliente_telefone)
+    setRegiao(cliente.cliente_regiao)
+    setSexo(cliente.cliente_sexo)
 
   }, [cliente])
 
