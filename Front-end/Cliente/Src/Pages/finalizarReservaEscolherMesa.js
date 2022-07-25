@@ -109,7 +109,7 @@ export default function RestauranteScreen({ route, navigation }) {
             dia={dateFormat.getDayDateNoBrString(item.mesa_data_hora)}
             quantMesa={item.mesa_quant_mesas}
             quantPessoa={item.mesa_quant_pessoas}
-            func={() => { navigation.navigate('escolherPrato', { restaurante, cliente, item }) }}
+            func={() => { navigation.navigate('escolherPratos', { restaurante, cliente, item }) }}
           />
         }
       />

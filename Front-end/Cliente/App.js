@@ -9,7 +9,7 @@ import FinalizarCadastroCliente from './Src/Pages/finalizarCadastroCliente'
 import MainPage from './Src/Pages/main'
 import editPerfil from './Src/Pages/editPerfil'
 import escolherMesa from './Src/Pages/finalizarReservaEscolherMesa'
-
+import escolherPratos from './Src/Pages/finalizarReservaEscolherPrato'
 //NAVIGATIONS
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +22,7 @@ export default function App() {
         <Stack.Screen name="main" component={MainPage} />
         <Stack.Screen name="editPerfil" component={editPerfil} />
         <Stack.Screen name="escolherMesa" component={escolherMesa} />
+        <Stack.Screen name="escolherPratos" component={escolherPratos} />
 
 
       </Stack.Navigator>
