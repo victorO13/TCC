@@ -10,23 +10,23 @@ import {
 } from 'react-native'
 
 //STYLES
-import styleDetalhesReserva from '../styles/styleDetalhesReserva'
-import styleGlobal from '../styles/styleGlobal'
+import styleDetalhesReserva from '../Styles/styleDetalhesReserva'
 
-import colors from '../styles/colors/colors'
+
+import colors from '../Styles/Colors/Colors'
 
 
 //COMPONENTES
-import PageName from '../components/PageName'
+import PageName from '../Components/PageName'
 import { FontAwesome } from '@expo/vector-icons'
 
 //SERVICES
-import reservaHasPratosService from '../services/reservaHasPratosService'
-import restauranteService from '../services/restauranteService'
+import reservaHasPratosService from '../Services/reservaHasPratosService'
+import restauranteService from '../Services/restauranteService'
 
 
 
-export default function reservaMaisDetalhes({ route, navigation }) {
+export default function ReservaMaisDetalhes({ route, navigation }) {
 
     const [listaPratosReserva, setListaPratosReserva] = useState([])
     const [listaPratosReservaUpdate, setListaPratosReservaUpdate] = useState(true)

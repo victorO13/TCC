@@ -73,7 +73,7 @@ export default function ReservasScreen({ route, navigation }) {
             nomePessoa={item.cliente_nome}
             qtdPessoa={item.reserva_qtd_pessoas}
             reserva_codigo={item.reserva_codigo}
-            nav={() => navigation.navigate('reservaMaisDetalhes', item)}
+            nav={() => navigation.navigate('maisDetalhes', item)}
           >
           </ItemListReserva>
         }
