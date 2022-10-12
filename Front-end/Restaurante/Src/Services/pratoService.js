@@ -11,7 +11,6 @@ module.exports = {
         }
     },
     create(PratoModel) {
-        console.log(PratoModel.prato_restaurante_codigo);
         return api.post('/prato/create/', {
             "prato_nome": PratoModel.prato_nome,
             //"prato_categoria": PratoModel.prato_categoria,

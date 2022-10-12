@@ -27,10 +27,10 @@ export default function ReservasScreen({ route, navigation }) {
 
 
   async function loadDados() {
-
     if (listaReservaUpdate) {
       await reservaService.findByRestaurante(route.params.restaurante_codigo)
         .then((r) => {
+
           setListaReserva(r.reservas)
         })
         .catch((error) => { })
@@ -40,10 +40,11 @@ export default function ReservasScreen({ route, navigation }) {
 
   }
 
-
   useEffect(() => {
     loadDados()
   }, [listaReservaUpdate])
+
+
 
   return (
     <View style={[styleReservas.container]}>

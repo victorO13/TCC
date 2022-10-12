@@ -3,7 +3,7 @@ import api from './requisicaoService'
 module.exports = {
     all() {
         api.get('/restaurante/all').then((response) => {
-            console.log(response.data);
+
         })
     },
     create(modelRestaurante) {

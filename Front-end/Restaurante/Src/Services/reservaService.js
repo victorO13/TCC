@@ -1,4 +1,5 @@
-import restauranteService from './restauranteService'
+import api from './requisicaoService'
+
 module.exports = {
 
     async all() {
@@ -12,8 +13,7 @@ module.exports = {
             })
     },
     async findByRestaurante(restaurante_codigo) {
-        const requisicao = require('./requisicaoService')
-        return requisicao.post('/reserva/findByRestaurante/', {
+        return api.post('/reserva/findByRestaurante', {
             "restaurante_codigo": restaurante_codigo
         })
             .then(function (response) {

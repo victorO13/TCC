@@ -20,7 +20,6 @@ module.exports = {
         })
     },
     async update(MesaModel) {
-        console.log('service update ->', MesaModel);
 
         return api.post('/mesa/update',
             {

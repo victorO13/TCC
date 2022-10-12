@@ -1,8 +1,9 @@
+import api from './requisicaoService'
 module.exports = {
 
     async all() {
-        const requisicao = require('./requisicaoService')
-        return requisicao.get('/reservaHasPratos/all/')
+
+        return api.get('/reservaHasPratos/all/')
             .then(function (response) {
                 return response.data
             })
@@ -11,8 +12,8 @@ module.exports = {
             })
     },
     async create(reservaHasPratoModel) {
-        const requisicao = require('./requisicaoService')
-        return requisicao.post('/reservaHasPratos/create/', {
+
+        return api.post('/reservaHasPratos/create/', {
             "reserva_has_prato_quant_prato": 1,
             "reserva_has_prato_reserva_codigo": 1,
             "reserva_has_prato_prato_codigo": 1
@@ -20,8 +21,8 @@ module.exports = {
 
     },
     async findByReserva(reservaCodigo) {
-        const requisicao = require('./requisicaoService')
-        return requisicao.post('/reservaHasPratos/findByReserva', {
+
+        return api.post('/reservaHasPratos/findByReserva', {
             "reserva_codigo": reservaCodigo
         })
             .then(function (response) {
@@ -32,8 +33,8 @@ module.exports = {
             })
     },
     async findByReservaCountPratos(reservaCodigo) {
-        const requisicao = require('./requisicaoService')
-        return requisicao.post('/reservaHasPratos/findByReservaCountPratos', {
+
+        return api.post('/reservaHasPratos/findByReservaCountPratos', {
             "reserva_codigo": reservaCodigo
         })
             .then(function (response) {
